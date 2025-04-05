@@ -24,4 +24,22 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+// Venues
+app.MapControllerRoute(
+    name: "venues",
+    pattern: "venues/{action=Index}/{id?}",
+    defaults: new { controller = "Venues" });
+
+// Events
+app.MapControllerRoute(
+    name: "events",
+    pattern: "events/{action=Index}/{id?}",
+    defaults: new { controller = "Events" });
+
+// Bookings
+app.MapControllerRoute(
+    name: "bookings",
+    pattern: "bookings/{action=Index}/{id?}",
+    defaults: new { controller = "Bookings" });
+
 app.Run();
