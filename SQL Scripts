@@ -1,0 +1,26 @@
+SQL Script: 
+CREATE TABLE Venue (
+    VenueId INT PRIMARY KEY IDENTITY,
+    VenueName NVARCHAR(100),
+    Location NVARCHAR(150),
+    Capacity INT,
+    ImageUrl NVARCHAR(255)
+);
+
+CREATE TABLE Event (
+    EventId INT PRIMARY KEY IDENTITY,
+    EventName NVARCHAR(100),
+    EventDate DATE,
+    Description NVARCHAR(500),
+    VenueId INT,
+    FOREIGN KEY (VenueId) REFERENCES Venue(VenueId)
+);
+
+CREATE TABLE Booking (
+    BookingId INT PRIMARY KEY IDENTITY,
+    EventId INT,
+    VenueId INT,
+    BookingDate DATE,
+    FOREIGN KEY (EventId) REFERENCES Event(EventId),
+    FOREIGN KEY (VenueId) REFERENCES Venue(VenueId)
+);
