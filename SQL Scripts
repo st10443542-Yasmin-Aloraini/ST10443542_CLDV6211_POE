@@ -1,4 +1,3 @@
-SQL Script: 
 CREATE TABLE Venue (
     VenueId INT PRIMARY KEY IDENTITY,
     VenueName NVARCHAR(100),
